@@ -58,7 +58,7 @@ namespace GWT.Client.Views
                 tp.VerticalScroll.Enabled = true;
 
                 _tabAndItsControlsDictionary.Add(tp, new List<ItemViewControl>());
-                foreach (var itemViewControl in controlGroup.Value)
+                foreach (var itemViewControl in controlGroup.Value.OrderBy(s => s.ItemDto.Name))
                 {
                     PinOnClickToUpdateSelectedControlEvent(itemViewControl);
                     flp.Controls.Add(itemViewControl);
